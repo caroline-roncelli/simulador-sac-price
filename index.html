@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Simulador de Amortização — SAC vs. Price</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topo">
+    <h1>Simulador de Amortização — SAC vs. Price</h1>
+    <p>Compare como um empréstimo é pago em cada sistema.</p>
+  </header>
+
+  <main>
+    <section class="painel">
+      <h2>Dados do financiamento</h2>
+      <div class="campos">
+        <label>Valor financiado (R$)
+          <input id="valor" inputmode="decimal" placeholder="10.000,00">
+        </label>
+        <label>Taxa de juros mensal (%)
+          <input id="taxa" inputmode="decimal" placeholder="2">
+        </label>
+        <label>Quantidade de parcelas (meses)
+          <input id="parcelas" inputmode="numeric" placeholder="12">
+        </label>
+      </div>
+      <div id="erros" class="erros" role="alert"></div>
+      <div class="botoes">
+        <button id="btnCalcular" class="primario">Calcular simulação</button>
+        <button id="btnLimpar" class="secundario">Limpar</button>
+      </div>
+      <p class="aviso">A simulação não inclui tarifas, seguros, impostos ou outros encargos.</p>
+    </section>
+
+    <div id="resultados" hidden>
+      <section class="painel" id="comparacao">
+        <h2>Comparação</h2>
+        <div id="cardsComparacao" class="cards"></div>
+        <h3>Evolução do saldo devedor</h3>
+        <div id="grafico"></div>
+      </section>
+
+      <section class="painel sac">
+        <h2>SAC — Amortização Constante</h2>
+        <div id="cardsSac" class="cards"></div>
+        <div class="tabela-rolagem"><table id="tabelaSac"></table></div>
+      </section>
+
+      <section class="painel price">
+        <h2>Tabela Price — Sistema Francês</h2>
+        <div id="cardsPrice" class="cards"></div>
+        <div class="tabela-rolagem"><table id="tabelaPrice"></table></div>
+      </section>
+    </div>
+  </main>
+
+  <script src="calculos.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

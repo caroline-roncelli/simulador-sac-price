@@ -1,0 +1,38 @@
+:root {
+  --fundo: #f2f5f9; --texto: #1c2733; --suave: #5b6b7c; --borda: #d8e0e9; --painel: #ffffff;
+  --sac: #0e7c7b; --price: #4a3fb5; --erro: #b3261e;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--fundo); color: var(--texto); font-family: "Segoe UI", system-ui, sans-serif; line-height: 1.5; }
+.topo { padding: 2rem 1rem 1rem; max-width: 960px; margin: 0 auto; }
+.topo h1 { margin: 0; font-size: clamp(1.4rem, 4vw, 2rem); }
+.topo p { margin: .25rem 0 0; color: var(--suave); }
+main { max-width: 960px; margin: 0 auto; padding: 0 1rem 3rem; }
+.painel { background: var(--painel); border: 1px solid var(--borda); border-radius: 10px; padding: 1.25rem; margin-top: 1rem; }
+.painel h2 { margin: 0 0 1rem; font-size: 1.2rem; }
+.sac h2 { color: var(--sac); } .price h2 { color: var(--price); }
+.campos { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; }
+label { display: flex; flex-direction: column; gap: .35rem; font-size: .9rem; font-weight: 600; }
+input { padding: .65rem .75rem; border: 1px solid var(--borda); border-radius: 6px; font-size: 1rem; }
+input:focus-visible, button:focus-visible { outline: 3px solid #8fb7ff; outline-offset: 1px; }
+.erros { color: var(--erro); margin-top: .75rem; font-size: .9rem; }
+.erros p { margin: .15rem 0; }
+.botoes { display: flex; gap: .75rem; margin-top: 1rem; flex-wrap: wrap; }
+button { padding: .7rem 1.2rem; border-radius: 6px; font-size: 1rem; font-weight: 600; cursor: pointer; border: 1px solid transparent; }
+.primario { background: var(--sac); color: #fff; }
+.secundario { background: #fff; border-color: var(--borda); color: var(--texto); }
+.aviso { color: var(--suave); font-size: .8rem; margin: .75rem 0 0; }
+.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: .75rem; margin-bottom: 1rem; }
+.card { border: 1px solid var(--borda); border-radius: 8px; padding: .8rem; }
+.card span { display: block; font-size: .8rem; color: var(--suave); }
+.card strong { font-size: 1.15rem; }
+h3 { font-size: 1rem; margin: 1.25rem 0 .5rem; }
+.tabela-rolagem { overflow-x: auto; max-height: 420px; overflow-y: auto; border: 1px solid var(--borda); border-radius: 8px; }
+table { width: 100%; border-collapse: collapse; font-size: .9rem; font-variant-numeric: tabular-nums; }
+th, td { padding: .5rem .75rem; text-align: right; white-space: nowrap; }
+th:first-child, td:first-child { text-align: center; }
+thead th { position: sticky; top: 0; background: #eaf0f6; }
+tbody tr:nth-child(even) { background: #f7f9fc; }
+.legenda { display: flex; gap: 1rem; font-size: .85rem; margin-bottom: .25rem; }
+.legenda i { display: inline-block; width: 12px; height: 12px; border-radius: 2px; margin-right: .3rem; vertical-align: -1px; }
+svg { width: 100%; height: auto; }
